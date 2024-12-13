@@ -24,7 +24,7 @@ export const fetchChannelPresentationVideo = async (channelId, apiKey) => {
     const thumbnailImageUrl = video.snippet.thumbnails.high.url;
     const videoUrl = `https://www.youtube.com/watch?v=${featuredVideoId}`;
     
-    return { videoUrl,  thumbnailImageUrl };
+    return { url:videoUrl,  thumbnail: thumbnailImageUrl };
   } catch (error) {
     throw new Error(`Error al obtener el video de presentación del canal: ${error.message}`);
   }
