@@ -21,10 +21,10 @@ export const fetchChannelPresentationVideo = async (channelId, apiKey) => {
     if (!videoData || !videoData.items || videoData.items.length === 0) throw new Error('No se encontró el video de presentación del canal.');
 
     const video = videoData.items[0];
-    const thumbnailUrl = video.snippet.thumbnails.high.url;
+    const thumbnailImageUrl = video.snippet.thumbnails.high.url;
     const videoUrl = `https://www.youtube.com/watch?v=${featuredVideoId}`;
-
-    return { url: videoUrl, thumbnail: thumbnailUrl };
+    
+    return { videoUrl,  thumbnailImageUrl };
   } catch (error) {
     throw new Error(`Error al obtener el video de presentación del canal: ${error.message}`);
   }

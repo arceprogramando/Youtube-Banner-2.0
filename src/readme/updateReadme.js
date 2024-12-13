@@ -4,8 +4,7 @@ export const updateReadme = async (data) => {
   try {
     const { presentationVideo, lastVideos } = data;
 
-    let youtubeContent = `
-<div class="Youtube-Content">
+    let youtubeContent = `<div class="Youtube-Content">
   
 # Canal de YouTube
 
@@ -39,7 +38,7 @@ export const updateReadme = async (data) => {
     if (youtubeSectionRegex.test(readmeContent)) {
       readmeContent = readmeContent.replace(youtubeSectionRegex, youtubeContent);
     } else {
-      readmeContent += `\n${youtubeContent}`;
+      readmeContent += `${youtubeContent}`;
     }
 
     await fs.writeFile('README.md', readmeContent, 'utf8');
